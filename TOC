@@ -1,0 +1,38 @@
+                    TABLE OF CONTENTS
+                    =================
+
+                HISTORY
+
+                ADVANCED BEGINNERS
+                    - Help/Manual
+                    - Modal Editor
+                    - Motions
+                    - Windows/Splits
+                    - Tabs
+                    - Key Mappings
+                    - Search, regex and g command
+
+                IDE FEATURES
+                    - Autocomplete
+                    - Indexing, Tags
+                    - File Search and Navigation
+                    - In-Editor Linting     <<< TODO
+
+                CORE CONCEPTS
+                    - Composable Commands
+                    - Buffers
+                    - Marks
+                    - Registers, Macros
+                    - Snippets
+                    - Views, Sessions
+                    - Vimscript Language
+
+                COMPARISON WITH IDEs
+                    - PyCharm, VSCode, Visual Studio, IntelliJ, Eclipse
+                    - Atom, Sublime ...
+                    - Emacs
+
+                ISSUES WITH Vim
+                    - Asynchronous support
+                    - Scripting language
+                    - Relationship with NeoVim
