@@ -4,8 +4,8 @@
                 HISTORY
 
                 ADVANCED BEGINNERS
-                    - Help/Manual
                     - Modal Editor
+                    - Help/Manual
                     - Motions
                     - Windows/Splits
                     - Tabs
@@ -28,11 +28,260 @@
                     - Vimscript Language
 
                 COMPARISON WITH IDEs
-                    - PyCharm, VSCode, Visual Studio, IntelliJ, Eclipse
-                    - Atom, Sublime ...
-                    - Emacs
+                    - PyCharm, VSCode, Visual Studio, IntelliJ, Eclipse, Atom, Sublime ...
+                    - Xi
 
                 ISSUES WITH Vim
                     - Asynchronous support
                     - Scripting language
-                    - Relationship with NeoVim
+                    - Relationship with Neovim
+
+
+
+
+
+
+
+
+
+
+
+
+
+HISTORY
+=======
+
+
+Creator: Bram Moolenar
+License: Charity Ware (iccf-holland)
+Donation:
+Mailing List: 
+
+
+
+     1969       1976       1979      1988     1991
+    ==o==========o==========o=========o========o======
+      ed         ex         vi       Vim1.0   Vim1.14
+                          (Bill J)
+
+
+
+    1994     1996    1998     2001     2006
+    ==o=======o=======o========o========o=======o=======o
+    v3.0     v4.0    v5.0     v6.0     v7.0    v8.0    v8.1
+
+
+
+    Vim 3.0     Multiple windows
+    Vim 4.0     GUI
+    Vim 5.0     Syntax highlighting
+    Vim 6.0     Folding, multi-language
+    Vim 7.0     Tabs
+    Vim 8.0     Asynchronous support
+    Vim 8.1     Terminal
+
+
+
+References
+[1] https://twobithistory.org/2018/08/05/where-vim-came-from.html
+
+[2] Graphical Cheat Sheet
+https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ADVANCED BEGINNERS
+===================
+
+
+                MODAL EDITOR
+                ============
+
+            - :help vim-modes
+            - :help vim-modes-intro
+
+            - 4 main modes: Normal, Insert, Command, Visual
+                - Ex, Replace, Select, Ex, Visual Block/Line, ...
+
+            * Vim Mode Transition
+            https://rawgit.com/darcyparker/1886716/raw/vimModeStateDiagram.svg
+
+
+
+
+
+
+
+
+
+                HELP/MANUAL SYSTEM
+                ==================
+
+            - :help :help
+
+            - Most extensive help system (~2700 pages, v8.1)
+            - Cscope like navigation: CTRL-], CTRL-T and more ...
+            - Help search supports
+                - wildcards ('*', '?' and [a-z])
+                - modal help (:help i_{subject})
+                - CTRL-D after subject shows all options
+                    - How to search if many results? << TODO
+
+
+            - Plugins:
+                * powerman/vim-plugin-viewdoc
+
+
+
+
+
+
+
+
+                MOTIONS
+                =======
+            - :help motion.txt
+
+            - Basic: w, W, b, B, e, E
+            - Less basic: f, F, t, T
+            - Search: /, ?, *, g*, #, g#
+            - Used in Composing Commands: a, t, i
+                a -> all
+                t -> until
+                i -> in
+
+
+            - Plugins:
+                * easymotion/vim-easymotion
+
+
+
+
+
+
+
+
+
+
+                KEY MAPPINGS
+                ============
+                - :help map.txt
+                - :help usr_40.txt
+
+                - map {lhs} {rhs}
+                lhs = Usually a function key (or a seq of chars)
+                rhs = Series of operations
+
+                # TODO. More examples
+                :nnoremap <F3> :%s,\s\+$,,<CR>
+                :nnoremap <F4>T :split<CR>
+
+                :unmap {lhs}
+                :mapclear
+
+                Modal mapping
+                    :nmap {lhs} {rhs}
+                    :imap {lhs} {rhs}
+                    :vmap {lhs} {rhs}
+                    :nnoremap {lhs} {rhs}
+                    :inoremap {lhs} {rhs}
+                    :vnoremap {lhs} {rhs}
+
+                # TODO: Good examples of mappings in GPCS codebase
+
+
+
+
+
+
+
+                ABBREVIATIONS
+                =============
+            - Used in Insert, Replace and Command-line modes to save typing.
+              :iab {lhs} {rhs}
+              :unab {lhs}
+              :abclear
+
+            Example:
+                :iab email bupadhyayula@paloaltonetworks.com
+
+
+
+
+
+
+
+
+
+                WINDOWS/SPLITS
+                ==============
+            - :help windows.txt
+
+            - Split = :split, :vsplit, :new, :vnew
+            - Split = CTRL+W s, S,
+            - These splits take {cmds} :vertical, :leftabove, :rightabove ...
+                Ex = :vertical split
+
+            - Rotate = CTRL+W r. Lot of options.
+
+            - Resize Height = :resize -N/+N, CTRL-W -/+
+            - Resize Width = CTRL-W < or CTRL-W >
+                Full View = CTRL-W _ or CTRL-W |
+                Equal View = CTRL-W =
+
+            - Close = :quit, :close, CTRL-W q, :only, CTRL-W o, CTRL-W O ...
+
+
+
+
+                TABS
+                ====
+            - help :tabpage.txt
+
+            - Like any tabs feature, can hold multiple windows
+            - :tabedit {file}, :tabnew
+            - :tabnext, :tabprev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RESOURCES
+=========
+
+http://vimregex.com/
