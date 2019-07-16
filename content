@@ -10,6 +10,7 @@
                     - Windows/Splits
                     - Tabs
                     - Key Mappings
+                    - Abbreviations
                     - Search, regex and g command
 
                 IDE FEATURES
@@ -111,16 +112,15 @@ ADVANCED BEGINNERS
 ===================
 
 
-                MODAL EDITOR
-                ============
+            MODAL EDITOR
+            ============
+            :help vim-modes
+            :help vim-modes-intro
 
-            - :help vim-modes
-            - :help vim-modes-intro
-
-            - 4 main modes: Normal, Insert, Command, Visual
+            4 main modes: Normal, Insert, Command, Visual
                 - Ex, Replace, Select, Ex, Visual Block/Line, ...
 
-            * Vim Mode Transition
+            Vim Mode Transition
             https://rawgit.com/darcyparker/1886716/raw/vimModeStateDiagram.svg
 
 
@@ -131,21 +131,19 @@ ADVANCED BEGINNERS
 
 
 
-                HELP/MANUAL SYSTEM
-                ==================
+            HELP/MANUAL SYSTEM
+            ==================
+            :help :help
 
-            - :help :help
-
-            - Most extensive help system (~2700 pages, v8.1)
-            - Cscope like navigation: CTRL-], CTRL-T and more ...
-            - Help search supports
+            Most extensive help system (~2700 pages, v8.1)
+            Cscope like navigation: CTRL-], CTRL-T and more ...
+            Help search supports
                 - wildcards ('*', '?' and [a-z])
                 - modal help (:help i_{subject})
                 - CTRL-D after subject shows all options
                     - How to search if many results? << TODO
 
-
-            - Plugins:
+            Plugins:
                 * powerman/vim-plugin-viewdoc
 
 
@@ -155,20 +153,20 @@ ADVANCED BEGINNERS
 
 
 
-                MOTIONS
-                =======
-            - :help motion.txt
+            MOTIONS
+            =======
+            :help motion.txt
 
-            - Basic: w, W, b, B, e, E
-            - Less basic: f, F, t, T
-            - Search: /, ?, *, g*, #, g#
-            - Used in Composing Commands: a, t, i
+            Basic: w, W, b, B, e, E
+            Less basic: f, F, t, T
+            Search: /, ?, *, g*, #, g#
+            Used in Composing Commands: a, t, i
                 a -> all
                 t -> until
                 i -> in
 
 
-            - Plugins:
+            Plugins:
                 * easymotion/vim-easymotion
 
 
@@ -180,41 +178,42 @@ ADVANCED BEGINNERS
 
 
 
-                KEY MAPPINGS
-                ============
-                - :help map.txt
-                - :help usr_40.txt
+            KEY MAPPINGS
+            ============
+            :help map.txt
+            :help usr_40.txt
 
-                - map {lhs} {rhs}
+            map {lhs} {rhs}
                 lhs = Usually a function key (or a seq of chars)
                 rhs = Series of operations
 
-                # TODO. More examples
-                :nnoremap <F3> :%s,\s\+$,,<CR>
-                :nnoremap <F4>T :split<CR>
+            :unmap {lhs}
+            :mapclear
 
-                :unmap {lhs}
-                :mapclear
+            Modal mapping
+                :nmap {lhs} {rhs}
+                :imap {lhs} {rhs}
+                :vmap {lhs} {rhs}
 
-                Modal mapping
-                    :nmap {lhs} {rhs}
-                    :imap {lhs} {rhs}
-                    :vmap {lhs} {rhs}
-                    :nnoremap {lhs} {rhs}
-                    :inoremap {lhs} {rhs}
-                    :vnoremap {lhs} {rhs}
+            Avoid recursive mapping
+                :nnoremap {lhs} {rhs}
+                :inoremap {lhs} {rhs}
+                :vnoremap {lhs} {rhs}
 
-                # TODO: Good examples of mappings in GPCS codebase
-
-
+            # TODO: Good examples of mappings in GPCS codebase
+            :nnoremap <F3> :%s,\s\+$,,<CR>
+            :nnoremap <F4> :split<CR>
 
 
 
 
 
-                ABBREVIATIONS
-                =============
-            - Used in Insert, Replace and Command-line modes to save typing.
+
+
+
+            ABBREVIATIONS
+            =============
+            Used in Insert, Replace and Command-line modes to save typing.
               :iab {lhs} {rhs}
               :unab {lhs}
               :abclear
@@ -230,46 +229,34 @@ ADVANCED BEGINNERS
 
 
 
-                WINDOWS/SPLITS
-                ==============
-            - :help windows.txt
+            WINDOWS/SPLITS
+            ==============
+            :help windows.txt
 
-            - Split = :split, :vsplit, :new, :vnew
-            - Split = CTRL+W s, S,
-            - These splits take {cmds} :vertical, :leftabove, :rightabove ...
+            Split = :split, :vsplit, :new, :vnew
+            Split = CTRL+W s, S,
+            These splits take {cmds} :vertical, :leftabove, :rightabove ...
                 Ex = :vertical split
 
-            - Rotate = CTRL+W r. Lot of options.
+            Rotate = CTRL+W r. Lot of options.
 
-            - Resize Height = :resize -N/+N, CTRL-W -/+
-            - Resize Width = CTRL-W < or CTRL-W >
+            Resize Height = :resize -N/+N, CTRL-W -/+
+            Resize Width = CTRL-W < or CTRL-W >
                 Full View = CTRL-W _ or CTRL-W |
                 Equal View = CTRL-W =
 
-            - Close = :quit, :close, CTRL-W q, :only, CTRL-W o, CTRL-W O ...
+            Close = :quit, :close, CTRL-W q, :only, CTRL-W o, CTRL-W O ...
 
 
 
 
-                TABS
-                ====
-            - help :tabpage.txt
+            TABS
+            ====
+            :help :tabpage.txt
 
-            - Like any tabs feature, can hold multiple windows
-            - :tabedit {file}, :tabnew
-            - :tabnext, :tabprev
-
-
-
-
-
-
-
-
-
-
-
-
+            Like any tabs feature, can hold multiple windows
+              :tabedit {file}, :tabnew
+              :tabnext, :tabprev
 
 
 
