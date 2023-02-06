@@ -4,38 +4,41 @@
                 HISTORY
 
                 ADVANCED BEGINNERS
-                    - Modal Editor
-                    - Help/Manual
-                    - Motions
-                    - Windows/Splits
-                    - Tabs
-                    - Key Mappings
-                    - Abbreviations
-                    - Search, regex and g command
-
-                IDE FEATURES
-                    - Autocomplete
-                    - Indexing, Tags
-                    - File Search and Navigation
-                    - In-Editor Linting     <<< TODO
+                  Modal Editor
+                  Help/Manual
+                  Motions
+                  Key Mappings
+                  Windows/Splits
+                  Tabs
+                  Abbreviations
+                  Search, regex and g command
 
                 CORE CONCEPTS
-                    - Composable Commands
-                    - Buffers
-                    - Marks
-                    - Registers, Macros
-                    - Snippets
-                    - Views, Sessions
-                    - Vimscript Language
+                  Composable Commands
+                  Buffers
+                  Marks
+                  Registers, Macros
+                  Snippets
+                  Vimscript Language
+                  Views, Sessions
 
-                COMPARISON WITH IDEs
-                    - PyCharm, VSCode, Visual Studio, IntelliJ, Eclipse, Atom, Sublime ...
-                    - Xi
+                IDE FEATURES
+                  Autocomplete
+                  Indexing, Tags
+                  In-Editor Linting     <<< TODO
+                  File Search and Navigation
+
+                OTHER IDEs
+                  Neovim
+                  Helix
+                  LunarVim
+                  PyCharm, VSCode, Visual Studio, IntelliJ, Eclipse, Atom, Sublime ...
+                  Xi
 
                 ISSUES WITH Vim
-                    - Asynchronous support
-                    - Scripting language
-                    - Relationship with Neovim
+                  Asynchronous support
+                  Scripting language
+                  Relationship with Neovim
 
 
 
@@ -49,48 +52,45 @@
 
 
 
-HISTORY
-=======
+              HISTORY
+              =======
 
 
-Creator: Bram Moolenar
-License: Charity Ware (iccf-holland)
-Donation:
-Mailing List: 
-
-
-
-     1969       1976       1979      1988     1991
-    ==o==========o==========o=========o========o======
-      ed         ex         vi       Vim1.0   Vim1.14
-                          (Bill J)
+              Creator: Bram Moolenar
+              License: Charity Ware (iccf-holland)
+              Donation:
+              Mailing List:
 
 
 
-    1994     1996    1998     2001     2006
-    ==o=======o=======o========o========o=======o=======o
-    v3.0     v4.0    v5.0     v6.0     v7.0    v8.0    v8.1
+                   1969       1976       1979      1988     1991
+                  ==o==========o==========o=========o========o======
+                    ed         ex         vi       Vim1.0   Vim1.14
+                                        (Bill J)
 
 
 
-    Vim 3.0     Multiple windows
-    Vim 4.0     GUI
-    Vim 5.0     Syntax highlighting
-    Vim 6.0     Folding, multi-language
-    Vim 7.0     Tabs
-    Vim 8.0     Asynchronous support
-    Vim 8.1     Terminal
+                  1994     1996    1998     2001     2006
+                  ==o=======o=======o========o========o=======o=======o
+                  v3.0     v4.0    v5.0     v6.0     v7.0    v8.0    v8.1
 
 
 
-References
-[1] https://twobithistory.org/2018/08/05/where-vim-came-from.html
+                  Vim 3.0     Multiple windows
+                  Vim 4.0     GUI
+                  Vim 5.0     Syntax highlighting
+                  Vim 6.0     Folding, multi-language
+                  Vim 7.0     Tabs
+                  Vim 8.0     Asynchronous support
+                  Vim 8.1     Terminal
 
-[2] Graphical Cheat Sheet
-https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf
 
 
+              References
+              [1] https://twobithistory.org/2018/08/05/where-vim-came-from.html
 
+              [2] Graphical Cheat Sheet
+              https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf
 
 
 
@@ -98,18 +98,8 @@ https://eggplant.pro/blog/wp-content/uploads/2016/12/vi-vim-tutorial.pdf
 
 
 
-
-
-
-
-
-
-
-
-
-
-ADVANCED BEGINNERS
-===================
+            ADVANCED BEGINNERS
+            ===================
 
 
             MODAL EDITOR
@@ -118,7 +108,12 @@ ADVANCED BEGINNERS
             :help vim-modes-intro
 
             4 main modes: Normal, Insert, Command, Visual
-                - Ex, Replace, Select, Ex, Visual Block/Line, ...
+                Many more modes: Ex, Replace, Select, Visual Block/Line, ...
+
+            Normal: Navigation and Editing 
+            Insert: Writing text
+            Command: execute commands
+            Visual: For editing block of text
 
             Vim Mode Transition
             https://rawgit.com/darcyparker/1886716/raw/vimModeStateDiagram.svg
@@ -157,6 +152,7 @@ ADVANCED BEGINNERS
             =======
             :help motion.txt
 
+
             Basic: w, W, b, B, e, E
             Less basic: f, F, t, T
             Search: /, ?, *, g*, #, g#
@@ -183,12 +179,15 @@ ADVANCED BEGINNERS
             :help map.txt
             :help usr_40.txt
 
+
             map {lhs} {rhs}
                 lhs = Usually a function key (or a seq of chars)
                 rhs = Series of operations
 
+
             :unmap {lhs}
             :mapclear
+
 
             Modal mapping
                 :nmap {lhs} {rhs}
@@ -234,25 +233,30 @@ ADVANCED BEGINNERS
             :help windows.txt
 
             Split = :split, :vsplit, :new, :vnew
-            Split = CTRL+W s, S,
+            Split = ctrl+w s, S,
             These splits take {cmds} :vertical, :leftabove, :rightabove ...
                 Ex = :vertical split
 
-            Rotate = CTRL+W r. Lot of options.
+            Rotate = ctrl+w r
+              Lot of options
 
-            Resize Height = :resize -N/+N, CTRL-W -/+
-            Resize Width = CTRL-W < or CTRL-W >
-                Full View = CTRL-W _ or CTRL-W |
-                Equal View = CTRL-W =
+            Resize Height = :resize -N/+N, ctrl+w -/+   " N is a number
+            Resize Width = ctrl+w < or ctrl+w >
+                Full View = ctrl+w _ or ctrl+w |
+                Equal View = ctrl-w =
 
-            Close = :quit, :close, CTRL-W q, :only, CTRL-W o, CTRL-W O ...
+            Close = :quit, :close, ctrl+w q, :only, ctrl+w o, ...
+
+
+
+
 
 
 
 
             TABS
             ====
-            :help :tabpage.txt
+            :help tabpage.txt
 
             Like any tabs feature, can hold multiple windows
               :tabedit {file}, :tabnew
@@ -263,6 +267,72 @@ ADVANCED BEGINNERS
 
 
 
+
+
+
+            SEARCH, REGEX and g COMMAND
+            ===========================
+
+
+
+            CORE CONCEPTS
+            =============
+            Composable Commands
+            Buffers
+            Marks
+            Registers, Macros
+            Snippets
+            Views, Sessions
+            Vimscript Language
+
+
+            COMPOSABLE COMMANDS
+            ===================
+
+            BUFFERS
+            =======
+
+            MARKS
+            =====
+
+            REGISTERS
+            =========
+
+            MACROS (RECORDING)
+            ==================
+            - A repetitive task can be recorded and played any number of times on any number of lines.
+
+            SNIPPETS
+            ========
+
+            VIMSCRIPT LANGUAGE
+            ==================
+
+            VIEWS, SESSIONS
+            ===============
+
+            IDE FEATURES
+            ============
+
+            AUTOCOMPLETE
+            ============
+
+            INDEXING, TAGS
+            ==============
+
+            IN-EDITOR LINTING
+            =================
+
+            FILE SEARCH AND NAVIGATION
+            ==========================
+
+
+            OTHER IDEs
+              Neovim
+              Helix
+              LunarVim
+              PyCharm, VSCode, Visual Studio, IntelliJ, Eclipse, Atom, Sublime ...
+              Xi
 
 
 
